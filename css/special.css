@@ -176,7 +176,7 @@ header .bar .container .mega-menu ul {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  width: 50%;
+  width: 60%;
 }
 header .landing {
   margin-top: 1px;
