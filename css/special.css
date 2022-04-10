@@ -101,78 +101,41 @@ a.scroll-button:hover i {
   padding: 10px 20px;
   border: 2px solid black;
   width: fit-content;
-  margin: 0 auto 50px;
+  margin: 0 auto 80px;
   font-size: 30px;
   position: relative;
   letter-spacing: -2px;
+  transition: var(--main-transition);
 }
 .main-heading:hover {
-  transition-duration: .1s;
-  transition-delay: .5s;
   color: white;
-  border-color: #fff;
-  z-index: 2;
+  border: 2px solid white;
+  transition-delay: 0.5s;
 }
-.main-heading::before {
-  content: "";
-  position: absolute;
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-  left: -30px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: var(--main-color);
-}
-.main-heading:hover::before {
-  left: 0;
-  z-index: -2;
-  transition-duration: .3s;
-  border-radius: 50%;
-} 
+.main-heading::before,
 .main-heading::after {
   content: "";
-  position: absolute;
-  height: 12px;
   width: 12px;
+  height: 12px;
+  background-color: var(--main-color);
+  position: absolute;
   border-radius: 50%;
-  right: -30px;
   top: 50%;
   transform: translateY(-50%);
-  background-color: var(--main-color);
+}
+.main-heading::before {
+  left: -30px;
+}
+.main-heading:hover::before {
+  z-index: -1;
+  animation: left-move 0.5s linear forwards;
+}
+.main-heading::after {
+  right: -30px;
 }
 .main-heading:hover::after {
-  right: 0;
-  z-index: -2000;
-  transition-duration: .3s;
-  border-radius: 50%;
-} 
-.main-heading span::before {
-  content: "";
-  position: absolute;
-  height: 12px;
-  width: 12px;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.main-heading span::after {
-  content: "";
-  position: absolute;
-  height: 12px;
-  width: 12px;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.main-heading:hover span::before, 
-.main-heading:hover span::after {
-  width: 51%;
-  height: 100%;
-  transition-duration: .4s;
-  transition-delay: .18s;
   z-index: -1;
-  background-color: var(--main-color-alt);
+  animation: right-move 0.5s linear forwards;
 }
 /* End Components Custom */
 /* Start Header  */
@@ -466,13 +429,21 @@ article {
 article .container .content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   gap: 30px 30px;
 }
 article .container .content .box {
   border-radius: 10px;
-  box-shadow: 0px 2px 10px 0px #c3c3c3;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0px 2px 5px 0px #c3c3c3;
+  transition: var(--main-transition);
+  transition: transform ;
+}
+article .container .content .box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 2px 14px 0px #7e7e7e;
 }
 @media (max-width: 586px) {
   article .container .content .box  {
@@ -485,20 +456,21 @@ article .container .content .box {
   }
 }
 @media (min-width: 992px) {
+  article .container .content {
+    justify-content: flex-start;
+  }
   article .container .content .box {
     width: calc(93% / 3);
   }
 }
 @media (min-width: 1200px) {
   article .container .content .box {
-    width: calc(93% / 4);
+    width: calc(90% / 4);
   }
 }
-article .container .content .box .img {
-}
 article .container .content .box .img img {
+  width: 100%;
   max-width: 100%;
-  border-radius: 10px 10px 0 0;
 }
 article .container .content .box .text {
   padding: 20px;
@@ -525,7 +497,8 @@ article .container .content .link span {
   letter-spacing: -1px;
   cursor: pointer;
 }
-article .container .content .link i {
+article .container .content .box:hover .link i {
+  animation: move-right-to-left-i .8s infinite linear;
 }
 /* End Articles */
 /* Start Animation */
@@ -548,6 +521,41 @@ article .container .content .link i {
   }
   40% {
     bottom: -8px;
+  }
+}
+@keyframes move-right-to-left-i {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  65% {
+    transform: translateX(10px);
+  }
+}
+@keyframes left-move {
+  50% {
+    left: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    left: 0;
+    border-radius: 0;
+    width: 51%;
+    height: 100%;
+  }
+}
+@keyframes right-move {
+  50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 51%;
+    height: 100%;
   }
 }
 /* End Animation */
