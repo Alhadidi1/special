@@ -962,6 +962,7 @@ article .container .content .box:hover .link i {
   position: relative;
   left: -20px;
   color: #777777;
+  z-index: 1;
 }
 .team-members .container .content .icons i:hover {
   color: var(--main-color);
@@ -1391,7 +1392,6 @@ article .container .content .box:hover .link i {
 }
 .events .container .content .numbers div {
   border: 1px solid #d4d4d4;
-  border-radius: 6px;
   padding: 15px 15px 0;
   position: relative;
   width: 82px;
@@ -1402,6 +1402,11 @@ article .container .content .box:hover .link i {
   transition: var(--main-transition);
   margin-right: 8px;
   display: inline-block;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
 }
 @media (max-width: 767px) {
   .events .container .content .numbers div {
@@ -1469,10 +1474,18 @@ form input[type="email"] {
 }
 form input[type="email"]::placeholder {
   font-size: 15px;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
   transition: var(--main-transition);
 }
 form input[type="email"]:focus::placeholder{
   color: white;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
   transition: var(--main-transition);
 }
 form input[type="submit"] {
@@ -1484,8 +1497,12 @@ form input[type="submit"] {
   font-weight: 700;
   text-transform: capitalize;
   font-size: 14px;
-  transition: var(--main-transition);
   cursor: pointer;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  transition: var(--main-transition);
 }
 form input[type="submit"]:hover {
   background-color: var(--main-color-alt);
@@ -1519,6 +1536,190 @@ form input[type="submit"]:hover {
   }
 }
 /* End Events */
+/* Start Pricing */
+.pricing {
+  padding-top: var(--padding-section);
+  padding-bottom: var(--padding-section);
+  background-color: var(--section-light-color);
+  position: relative;
+}
+.pricing::before,
+.pricing::after {
+  content: "";
+  background-image: url(../imgs/dots.png);
+  position: absolute;
+  width: 204px;
+  height: 186px;
+}
+.pricing::before {
+  bottom: 170px;
+  left: 0;
+}
+.pricing::after {
+  top: 170px;
+  right: 0;
+}
+.pricing .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+.pricing .container .basic,
+.pricing .container .advanced,
+.pricing .container .professional {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #fff;
+  z-index: 1;
+  box-shadow: 0px 4px 4px 0 rgb(0 0 0 / 30%);
+  position: relative;
+}
+.pricing .container .basic::before,
+.pricing .container .advanced::before,
+.pricing .container .professional::before {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 0;
+  background-color: #f6f6f6;
+  left: 0;
+  top: 0;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  transition: var(--main-transition);
+  z-index: -1;
+}
+.pricing .container .basic:hover::before,
+.pricing .container .advanced:hover::before,
+.pricing .container .professional:hover::before {
+  width: 100%;
+}
+.pricing .container .basic::after,
+.pricing .container .advanced::after,
+.pricing .container .professional::after {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 0;
+  background-color: #f6f6f6;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  transition: var(--main-transition);
+  z-index: -1;
+}
+.pricing .container .basic:hover::after,
+.pricing .container .advanced:hover::after,
+.pricing .container .professional:hover::after {
+  width: 100%;
+}
+.pricing .container .advanced span:first-child {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  position: absolute;
+  background-color: var(--main-color);
+  padding: 10px 35px 10px 10px;
+  width: fit-content;
+  right: -25px;
+  top: 55px;
+  transform: rotatez(90deg);
+}
+.pricing .container .advanced span:first-child::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 21px solid #fff;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  bottom: 0px;
+  right: -1px;
+}
+.pricing .container div .info h4 {
+  text-align: center;
+  margin: 0 0 30px;
+  font-size: 22px;
+}
+.pricing .container div .info h4+i {
+  color: var(--main-color);
+  font-size: 80px;
+  display: block;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.pricing .container div .info span {
+  display: block;
+  text-align: center;
+  font-size: 45px;
+  color: var(--main-color);
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 50px;
+}
+.pricing .container div .info span::after {
+  content: "Per Month";
+  position: absolute;
+  color: var(--light-color);
+  font-size: 12px;
+  font-weight: 400;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.pricing .container div .info,
+.pricing .container div .text {
+  z-index: 2;
+}
+.pricing .container div .text p {
+  margin: 0;
+  border-top: 1px solid #eeeeee;
+  width: 100%;
+  padding: 20px 0px 20px 40px;
+  position: relative;
+}
+.pricing .container div .text p::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 5px;
+  border: solid var(--main-color);
+  border-width: 0px 0px 3px 3px;
+  transform: rotateZ(-53deg) translateY(-50%);
+  left: 20px;
+  top: 50%;
+}
+.pricing .container div .text span {
+  font-weight: bold;
+  padding: 15px 20px;
+  border: 2px solid var(--main-color);
+  border-radius: 6px;
+  display: block;
+  width: fit-content;
+  margin: 40px auto 0;
+  color: var(--main-color);
+  font-size: 15px;
+  letter-spacing: -1px;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  transition: var(--main-transition);
+  cursor: pointer;
+}
+.pricing .container div .text span:hover {
+  color: white;
+  background-color: var(--main-color-alt);
+  border-color: var(--main-color-alt);
+}
+/* End Pricing */
 /* Start Animation */
 @keyframes move-up-and-down-img {
   from {
