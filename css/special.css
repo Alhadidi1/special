@@ -1452,7 +1452,7 @@ article .container .content .box:hover .link i {
   color: var(--light-color);
   font-weight: 500;
 }
-form {
+.events form {
   padding: 30px 40px;
   width: fit-content;
   background-color: #f6f5f5;
@@ -1464,7 +1464,7 @@ form {
   margin: 50px auto 0;
 }
 
-form input[type="email"] {
+.events form input[type="email"] {
   outline: none;
   border: none;
   padding: 20px;
@@ -1472,7 +1472,7 @@ form input[type="email"] {
   width: 400px;
   caret-color: var(--main-color);
 }
-form input[type="email"]::placeholder {
+.events form input[type="email"]::placeholder {
   font-size: 15px;
   -webkit-transition: var(--main-transition);
   -moz-transition: var(--main-transition);
@@ -1480,7 +1480,7 @@ form input[type="email"]::placeholder {
   -o-transition: var(--main-transition);
   transition: var(--main-transition);
 }
-form input[type="email"]:focus::placeholder{
+.events form input[type="email"]:focus::placeholder{
   color: white;
   -webkit-transition: var(--main-transition);
   -moz-transition: var(--main-transition);
@@ -1488,7 +1488,7 @@ form input[type="email"]:focus::placeholder{
   -o-transition: var(--main-transition);
   transition: var(--main-transition);
 }
-form input[type="submit"] {
+.events form input[type="submit"] {
   border: none;
   color: #fff;
   background-color: var(--main-color);
@@ -1504,11 +1504,11 @@ form input[type="submit"] {
   -o-transition: var(--main-transition);
   transition: var(--main-transition);
 }
-form input[type="submit"]:hover {
+.events form input[type="submit"]:hover {
   background-color: var(--main-color-alt);
 }
 @media (max-width: 767px) {
-  form {
+  .events form {
     flex-direction: column;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -1518,7 +1518,7 @@ form input[type="submit"]:hover {
     padding: 20px;
     width: 90%;
   }
-  form input[type="email"] {
+  .events form input[type="email"] {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     -ms-border-radius: 0;
@@ -1526,13 +1526,13 @@ form input[type="submit"]:hover {
     border-radius: 0;
     width: 100%;
   }
-  form input[type="submit"] {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-  width: 100%;
+  .events form input[type="submit"] {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    width: 100%;
   }
 }
 /* End Events */
@@ -1638,6 +1638,10 @@ form input[type="submit"]:hover {
   width: fit-content;
   right: -25px;
   top: 55px;
+  -webkit-transform: rotatez(90deg);
+  -moz-transform: rotatez(90deg);
+  -ms-transform: rotatez(90deg);
+  -o-transform: rotatez(90deg);
   transform: rotatez(90deg);
 }
 .pricing .container .advanced span:first-child::after {
@@ -1681,6 +1685,10 @@ form input[type="submit"]:hover {
   font-weight: 400;
   bottom: -30px;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 .pricing .container div .info,
@@ -1701,15 +1709,18 @@ form input[type="submit"]:hover {
   height: 5px;
   border: solid var(--main-color);
   border-width: 0px 0px 3px 3px;
-  transform: rotateZ(-53deg) translateY(-50%);
   left: 20px;
   top: 50%;
+  -webkit-transform: rotateZ(-53deg) translateY(-50%);
+  -moz-transform: rotateZ(-53deg) translateY(-50%);
+  -ms-transform: rotateZ(-53deg) translateY(-50%);
+  -o-transform: rotateZ(-53deg) translateY(-50%);
+  transform: rotateZ(-53deg) translateY(-50%);
 }
 .pricing .container div .text span {
   font-weight: bold;
   padding: 15px 20px;
   border: 2px solid var(--main-color);
-  border-radius: 6px;
   display: block;
   width: fit-content;
   margin: 40px auto 0;
@@ -1722,6 +1733,11 @@ form input[type="submit"]:hover {
   -o-transition: var(--main-transition);
   transition: var(--main-transition);
   cursor: pointer;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
 }
 .pricing .container div .text span:hover {
   color: white;
@@ -1729,6 +1745,186 @@ form input[type="submit"]:hover {
   border-color: var(--main-color-alt);
 }
 /* End Pricing */
+/* Start Video */
+.video {
+  padding-top: var(--padding-section);
+  padding-bottom: var(--padding-section);
+}
+.video .container {
+  display: flex;
+  gap: 0;
+}
+@media (max-width: 991px) {
+  .video .container {
+    flex-direction: column;
+  }
+}
+.video .container aside {
+  width: 33%;
+  border: 1px solid #dddddd;
+  border-right-color: transparent;
+}
+@media (max-width: 991px) {
+  .video .container aside {
+    width: 100%;
+    border-right-color: #dddddd;
+  }
+}
+.video .container aside .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--section-light-color);
+  padding: 20px;
+}
+.video .container aside .title h4 {
+  margin: 0;
+  letter-spacing: -1px;
+  font-size: 15px;
+}
+.video .container aside div:not(.title) {
+  padding: 20px;
+  border-top: 1px solid var(--section-light-color);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  transition: var(--main-transition);
+}
+.video .container aside div:not(.title):hover {
+  background-color: #fafafa;
+  cursor: pointer;
+}
+.video .container aside div:not(.title) p {
+  margin-top: 0;
+  font-size: 15px;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  transition: var(--main-transition);
+}
+.video .container aside div:not(.title):hover p {
+  color: var(--main-color);
+}
+.video .container aside div:not(.title) span {
+  color: #747474;
+  font-size: 15px;
+}
+.video .container section {
+  width: 67%;
+  padding: 10px;
+  background-color: #e2e2e2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 991px) {
+  .video .container section {
+    width: 100%;
+    gap: 10px;
+  }
+}
+.video .container section div img {
+  width: 100%;
+  max-width: 100%;
+}
+.video .container section p {
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+  margin: 0;
+  font-size: 15px;
+}
+/* End Video */
+/* Start Stats */
+.stats {
+  padding-top: var(--padding-section);
+  padding-bottom: var(--padding-section);
+  background-image: url(../imgs/stats.jpg);
+  position: relative;
+}
+.stats::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255 255 255 / 95%);
+}
+.stats h2 {
+  color: black;
+  font-size: 38px;
+  text-align: center;
+  position: relative;
+  margin: 0 auto 50px;
+  letter-spacing: -2px;
+}
+.stats .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px 18px;
+}
+.stats .container div {
+  background-color: white;
+  z-index: 1;
+  text-align: center;
+  padding: 25px;
+  position: relative;
+}
+.stats .container div::before,
+.stats .container div::after {
+  content: "";
+  width: 2px;
+  height: 0;
+  position: absolute;
+  background-color: var(--main-color);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  transition: var(--main-transition);
+}
+.stats .container div:hover::before,
+.stats .container div:hover::after {
+  height: 100%;
+}
+.stats .container div::before {
+  left: 0;
+  bottom: 0;
+}
+.stats .container div::after {
+  right: 0;
+  top: 0;
+}
+.stats .container div i {
+  display: block;
+  font-size: 35px;
+}
+.stats .container div span {
+  font-size: 45px;
+  font-weight: bold;
+  margin: 15px auto 10px;
+  display: block;
+}
+.stats .container div p {
+  color: var(--main-color);
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -1px;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+  transition: var(--main-transition);
+}
+.stats .container div:hover p {
+  color: var(--main-color-alt);
+}
+/* End Stats */
 /* Start Animation */
 @keyframes move-up-and-down-img {
   from {
