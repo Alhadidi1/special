@@ -1971,7 +1971,7 @@ article .container .content .box:hover .link i {
   background-size: cover;
 }
 .discount > div::before {
-  background-image: url(../imgs/discount-background1.jpg);
+  background-image: url("../imgs/discount background 1.jpg");
   opacity: 0;
   -webkit-animation: view-and-hide-1 10s infinite alternate-reverse;
   -moz-animation: view-and-hide-1 10s infinite alternate-reverse;
@@ -1980,7 +1980,7 @@ article .container .content .box:hover .link i {
   animation: view-and-hide-1 10s infinite alternate-reverse;
 }
 .discount > div::after {
-  background-image: url(../imgs/discount-background2.jpg);
+  background-image: url("../imgs/discount background 2.jpg");
   opacity: 1;
   -webkit-animation: view-and-hide-2 10s infinite alternate-reverse;
   -moz-animation: view-and-hide-2 10s infinite alternate-reverse;
